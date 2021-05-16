@@ -1,0 +1,16 @@
+{
+  "name":    "eslint-mph-config",
+  "version": "1.0.0",
+  "author":  "Michael Hogg",
+  "license": "MIT",
+  "dependencies": {
+
+    "eslint": "7.25.0",
+
+    "eslint-plugin-react": "7.23.2",
+
+    "@typescript-eslint/parser":        "4.22.0",
+    "@typescript-eslint/eslint-plugin": "4.22.0"
+
+  }
+}
