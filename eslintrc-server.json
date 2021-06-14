@@ -1,13 +1,13 @@
 {
   // @see eslint.org/docs/user-guide/configuring/plugins#specifying-parser
-  // @see github.com/typescript-eslint/typescript-eslint/tree/v4.22.0/packages/parser#usage
-  // @see github.com/typescript-eslint/typescript-eslint/tree/v4.22.0/docs/getting-started/linting#configuration
+  // @see github.com/typescript-eslint/typescript-eslint/tree/v4.26.1/packages/parser#usage
+  // @see github.com/typescript-eslint/typescript-eslint/tree/v4.26.1/docs/getting-started/linting#configuration
   "parser": "@typescript-eslint/parser",
 
   // @see eslint.org/docs/user-guide/configuring/language-options#specifying-parser-options
   "parserOptions": {
     "sourceType": "module",
-    "project":    "./tsconfig.json"  // @see github.com/typescript-eslint/typescript-eslint/tree/v4.22.0/packages/parser#parseroptionsproject
+    "project":    "./tsconfig.json"  // @see github.com/typescript-eslint/typescript-eslint/tree/v4.26.1/packages/parser#parseroptionsproject
   },
 
   // @see eslint.org/docs/user-guide/configuring/language-options#specifying-environments
@@ -25,7 +25,7 @@
   "rules": {
 
     // @see eslint.org/docs/rules/#possible-errors
-    // @see github.com/eslint/website/blob/v7.25.0/_data/rules.yml#L3
+    // @see github.com/eslint/website/blob/v7.28.0/_data/rules.yml#L3
 
     "for-direction":                 ["error"],
     "getter-return":                 ["error", { "allowImplicit": false }],
@@ -82,7 +82,7 @@
 
 
     // @see eslint.org/docs/rules/#best-practices
-    // @see github.com/eslint/website/blob/v7.25.0/_data/rules.yml#L194
+    // @see github.com/eslint/website/blob/v7.28.0/_data/rules.yml#L194
 
     "accessor-pairs":               ["error"],
     "array-callback-return":        ["error", {
@@ -175,13 +175,13 @@
 
 
     // @see eslint.org/docs/rules/#strict-mode
-    // @see github.com/eslint/website/blob/v7.25.0/_data/rules.yml#L529
+    // @see github.com/eslint/website/blob/v7.28.0/_data/rules.yml#L529
 
     "strict": ["error", "safe"],
 
 
     // @see eslint.org/docs/rules/#variables
-    // @see github.com/eslint/website/blob/v7.25.0/_data/rules.yml#L536
+    // @see github.com/eslint/website/blob/v7.28.0/_data/rules.yml#L536
 
     "init-declarations":          ["off"],  // Replaced by "@typescript-eslint/init-declarations"
     "no-delete-var":              ["error"],
@@ -189,7 +189,7 @@
     "no-restricted-globals":      ["off"],
     "no-shadow":                  ["off"],  // Replaced by "@typescript-eslint/no-shadow"
     "no-shadow-restricted-names": ["error"],
-    "no-undef":                   ["off"],  // @see github.com/typescript-eslint/typescript-eslint/blob/v4.22.0/docs/getting-started/linting/FAQ.md#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+    "no-undef":                   ["off"],  // @see github.com/typescript-eslint/typescript-eslint/blob/v4.26.1/docs/getting-started/linting/FAQ.md#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
     "no-undef-init":              ["error"],
     "no-undefined":               ["off"],
     "no-unused-vars":             ["off"],  // Replaced by "@typescript-eslint/no-unused-vars"
@@ -197,7 +197,7 @@
 
 
     // @see eslint.org/docs/rules/#stylistic-issues
-    // @see github.com/eslint/website/blob/v7.25.0/_data/rules.yml#L589
+    // @see github.com/eslint/website/blob/v7.28.0/_data/rules.yml#L589
 
     "array-bracket-newline":            ["error", "consistent"],
     "array-bracket-spacing":            ["error", "never", {
@@ -345,7 +345,7 @@
 
 
     // @see eslint.org/docs/rules/#ecmascript-6
-    // @see github.com/eslint/website/blob/v7.25.0/_data/rules.yml#L986
+    // @see github.com/eslint/website/blob/v7.28.0/_data/rules.yml#L986
 
     "arrow-body-style":        ["error", "as-needed", { "requireReturnForObjectLiteral": false }],
     "arrow-parens":            ["error", "always"],
@@ -404,7 +404,7 @@
                                }],
 
 
-    // @see github.com/typescript-eslint/typescript-eslint/tree/v4.22.0/packages/eslint-plugin#supported-rules
+    // @see github.com/typescript-eslint/typescript-eslint/tree/v4.26.1/packages/eslint-plugin#supported-rules
 
     "@typescript-eslint/adjacent-overload-signatures":           ["error"],
     "@typescript-eslint/array-type":                             ["off"],
@@ -585,7 +585,7 @@
     "@typescript-eslint/unified-signatures":                     ["error"],
 
 
-    // @see github.com/typescript-eslint/typescript-eslint/tree/v4.22.0/packages/eslint-plugin#extension-rules
+    // @see github.com/typescript-eslint/typescript-eslint/tree/v4.26.1/packages/eslint-plugin#extension-rules
 
     "@typescript-eslint/brace-style":                 ["error", "1tbs", { "allowSingleLine": true }],
     "@typescript-eslint/comma-dangle":                ["error", "never"],
@@ -596,8 +596,10 @@
     "@typescript-eslint/default-param-last":          ["error"],
     "@typescript-eslint/dot-notation":                ["error", {
                                                         "allowKeywords":                     true,
+                                                        "allowPattern":                      "^_.*$",  // Allow square-bracket access for property names beginning with an underscore, to avoid triggering the "no-underscore-dangle" rule with dot-notation access.
                                                         "allowPrivateClassPropertyAccess":   false,
-                                                        "allowProtectedClassPropertyAccess": false
+                                                        "allowProtectedClassPropertyAccess": false,
+                                                        "allowIndexSignaturePropertyAccess": false
                                                       }],
     "@typescript-eslint/func-call-spacing":           ["error", "never"],
     "@typescript-eslint/indent":                      ["error", 2, {
@@ -660,7 +662,7 @@
                                                         "caughtErrors":       "none"
                                                       }],
     "@typescript-eslint/no-use-before-define":        ["error", {
-                                                        "functions":            true,
+                                                        "functions":            false,
                                                         "classes":              true,
                                                         "variables":            true,
                                                         "enums":                true,
