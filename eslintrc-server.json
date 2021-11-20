@@ -620,7 +620,7 @@
                                                           "TSUnionType"    // Ignore multi-line TypeScript unions.
                                                         ]
                                                       }],
-    "@typescript-eslint/init-declarations":           ["error", "always"],
+    "@typescript-eslint/init-declarations":           ["off"],
     "@typescript-eslint/keyword-spacing":             ["error", {
                                                         "before": true,
                                                         "after":  true
